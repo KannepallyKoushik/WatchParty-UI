@@ -76,46 +76,6 @@ function SignUp() {
         localStorage.setItem("access_token", parseRes.access_token);
         localStorage.setItem("refresh_token", parseRes.refresh_token);
       });
-
-    // const options = {
-    //   method: "POST",
-    //   headers: {
-    //     "content-type": "application/json",
-    //     Authorization: bearerToken,
-    //   },
-    //   data: qs.stringify(body),
-    //   url,
-    // };
-    // axios(options).then((res) => {
-    //   const parseRes = res.data;
-    //   console.log(parseRes);
-    //   localStorage.setItem("access_token", parseRes.access_token);
-    //   localStorage.setItem("refresh_token", parseRes.refresh_token);
-    // });
-    // const mail = email.toLowerCase() + "@cb.students.amrita.edu";
-    // const body = { email: mail, password };
-    // axios
-    //   .post("/auth/login", body, {
-    //     headers: {
-    //       "Content-type": "application/json",
-    //     },
-    //   })
-    //   .then((res) => {
-    //     const parseRes = res.data;
-    //     if (parseRes.token) {
-    //       localStorage.setItem("token", parseRes.token);
-    //       setIsAuthenticated(true);
-    //       toast.success("LoggedIn Successfully");
-    //     }
-    //   })
-    //   .catch((er) => {
-    //     setIsAuthenticated(false);
-    //     const status = er.response.status;
-    //     const errData = er.response.data;
-    //     document.getElementById("signup-failure1").style.visibility = "visible";
-    //     console.log("response error code", status);
-    //     setError(errData);
-    //   });
   };
 
   useEffect(() => {

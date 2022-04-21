@@ -12,12 +12,14 @@ import axios from "./axios";
 import "./App.css";
 
 import Home from "./Components/Home";
-import Theatre from "./Components/TheatreComponents/Theatre";
+// import Theatre from "./Components/TheatreComponents/Theatre";
 import Login from "./Components/AuthComponents/Login";
 import SignUp from "./Components/AuthComponents/SignUp";
+import CreateTheatre from "./Components/TheatreComponents/CreateTheatre";
+import JoinTheatre from "./Components/TheatreComponents/JoinTheatre";
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
 
   useEffect(() => {
     const body = { username: "ronnie", password: "1234" };
@@ -66,7 +68,19 @@ function App() {
             path="/createRoom"
             render={(props) =>
               isAuthenticated ? (
-                <Theatre {...props} />
+                <CreateTheatre {...props} />
+              ) : (
+                <Redirect to="/login" />
+              )
+            }
+          />
+
+          <Route
+            exact
+            path="/joinRoom"
+            render={(props) =>
+              isAuthenticated ? (
+                <JoinTheatre {...props} />
               ) : (
                 <Redirect to="/login" />
               )
